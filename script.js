@@ -22,6 +22,8 @@ let x;
 let y;
 let z;
 
+clear.addEventListener("click", clearing);
+
 function display (val) { 
    dis.innerHTML += val;
     return val;
@@ -59,10 +61,6 @@ divideButton.addEventListener("click", (e) => {
     dis.innerHTML = "";
 })
 
-clear.addEventListener("click", (e) => {
-    dis.innerHTML = " ";
-})
-
 equalButton.addEventListener("click", (e) => {
     y = parseInt(dis.innerHTML);
     switch (operator) {
@@ -77,3 +75,6 @@ equalButton.addEventListener("click", (e) => {
     dis.innerHTML = d;
 })
 
+function clearing(){ 
+    dis.innerHTML = " ";
+}
