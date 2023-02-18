@@ -78,3 +78,15 @@ equalButton.addEventListener("click", (e) => {
 function clearing(){ 
     dis.innerHTML = " ";
 }
+
+let person = {
+    name: "ania",
+    street: "koscielna i chuj",
+     print: function (){
+    console.log(this.name, this.street);
+}}
+let maciek = {
+    name:"maciek",
+    sex:"man"
+}
+console.log(person.street)
