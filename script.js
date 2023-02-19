@@ -7,6 +7,7 @@ const timesButton = document.querySelector("#operator3");
 const divideButton = document.querySelector("#operator4");
 const clear = document.querySelector("#clear");
 const input =  document.querySelectorAll(".but");   
+const fikusnik = document.querySelector("#fikusnik");
 let operator;
 let x;
 let y;
@@ -19,42 +20,46 @@ number.addEventListener("click", (e)=> {
 })}
 )
 
-
 clear.addEventListener("click", clearing);
+addButton.addEventListener("click", add);
+minusButton.addEventListener("click", minus);
+timesButton.addEventListener("click", times);
+divideButton.addEventListener("click", divide);
+equalButton.addEventListener("click", equal);
 
-addButton.addEventListener("click", (e) =>{
+function add(){
     x = parseInt(dis.innerHTML);
     operator = 1;
 
     dis1.innerHTML = dis.innerHTML;
     dis.innerHTML = "";
-})
+}
 
-minusButton.addEventListener("click", (e) => {
+function minus(){ 
     x = parseInt(dis.innerHTML);
     operator = 2;
 
     dis1.innerHTML = dis.innerHTML;
     dis.innerHTML = "";   
-})
+}
 
-timesButton.addEventListener("click", (e) => {
+function times(){
     x = parseInt(dis.innerHTML);
     operator = 3;
 
     dis1.innerHTML = dis.innerHTML;
     dis.innerHTML = "";
-})
+}
 
-divideButton.addEventListener("click", (e) => {
+function divide(){ 
     x = parseInt(dis.innerHTML);
     operator = 4;
 
     dis1.innerHTML = dis.innerHTML;
     dis.innerHTML = "";
-})
+}
 
-equalButton.addEventListener("click", (e) => {
+function equal(){
     y = parseInt(dis.innerHTML);
     switch (operator) {
         case 1: z = x + y; break;
@@ -66,7 +71,7 @@ equalButton.addEventListener("click", (e) => {
     }
     let d = parseInt(z);
     dis.innerHTML = d;
-})
+}
 
 function clearing(){ 
     if(clean == 0){ 
