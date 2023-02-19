@@ -1,33 +1,26 @@
-let dis = document.getElementById("dis1");
-let dis1 = document.getElementById("dis2");
-let equalButton = document.querySelector("#answer");
-let addButton = document.querySelector("#operator1");
-let minusButton = document.querySelector("#operator2");
-let timesButton = document.querySelector("#operator3");
-let divideButton = document.querySelector("#operator4");
-let clear = document.querySelector("#clear");
-/*
-let btn1 = document.getElementById("operand1");
-let btn2 = document.getElementById("operand2");
-let btn3 = document.getElementById("operand3");
-let btn4 = document.getElementById("operand4");
-let btn5 = document.getElementById("operand5");
-let btn6 = document.getElementById("operand6");
-let btn7 = document.getElementById("operand7");
-let btn8 = document.getElementById("operand8");
-let btn9 = document.getElementById("operand9");
-let btn0 = document.getElementById("operand0"); */
+const dis = document.getElementById("dis1");
+const dis1 = document.getElementById("dis2");
+const equalButton = document.querySelector("#answer");
+const addButton = document.querySelector("#operator1");
+const minusButton = document.querySelector("#operator2");
+const timesButton = document.querySelector("#operator3");
+const divideButton = document.querySelector("#operator4");
+const clear = document.querySelector("#clear");
+const input =  document.querySelectorAll(".but");   
 let operator;
 let x;
 let y;
 let z;
+let clean = 0;
+
+input.forEach( number => {
+number.addEventListener("click", (e)=> {
+    dis.innerHTML += e.target.value;
+})}
+)
+
 
 clear.addEventListener("click", clearing);
-
-function display (val) { 
-   dis.innerHTML += val;
-    return val;
-}
 
 addButton.addEventListener("click", (e) =>{
     x = parseInt(dis.innerHTML);
@@ -76,17 +69,14 @@ equalButton.addEventListener("click", (e) => {
 })
 
 function clearing(){ 
-    dis.innerHTML = " ";
+    if(clean == 0){ 
+        clean++;
+        dis.innerHTML = " ";
+        clear.innerHTML = "CE";
+    } else {
+        clean--;
+        dis.innerHTML = " ";
+        dis1.innerHTML = " ";
+        clear.innerHTML = "C";
+    }
 }
-
-let person = {
-    name: "ania",
-    street: "koscielna i chuj",
-     print: function (){
-    console.log(this.name, this.street);
-}}
-let maciek = {
-    name:"maciek",
-    sex:"man"
-}
-console.log(person.street)
