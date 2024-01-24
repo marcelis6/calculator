@@ -69,8 +69,11 @@ function equal(){
         break;
         case 4: z = x / y;
     }
+    
     let d = parseInt(z);
     dis.innerHTML = d;
+    
+   
 }
 
 function clearing(){ 
